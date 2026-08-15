@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>TETRIS</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #008080; /* classic Windows 3.0 teal desktop */
+    overflow: hidden;
+  }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* Outer sunken bevel frame around the game surface, per spec:
+     Win3.0-style panel, not a full window shell. */
+  #frame {
+    background: #c0c0c0;
+    padding: 6px;
+    border-top: 2px solid #808080;
+    border-left: 2px solid #808080;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+  }
+  #inner {
+    border-top: 2px solid #000000;
+    border-left: 2px solid #000000;
+    border-right: 2px solid #dfdfdf;
+    border-bottom: 2px solid #dfdfdf;
+    line-height: 0;
+  }
+  canvas#screen {
+    display: block;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    background: #000000;
+  }
+</style>
+</head>
+<body>
+  <div id="frame">
+    <div id="inner">
+      <canvas id="screen"></canvas>
+    </div>
+  </div>
+  <script src="dist/game.js"></script>
+</body>
+</html>

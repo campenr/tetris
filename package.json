@@ -1,0 +1,17 @@
+{
+  "name": "win31-tetris",
+  "version": "1.0.0",
+  "description": "A Tetris implementation styled after the Windows 3.0 Entertainment Pack Tetris, with a full modern Tetris Guideline ruleset. Custom engine, raw WebGL renderer, zero runtime dependencies.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit && esbuild src/main.ts --bundle --outfile=dist/game.js --target=es2019 --format=iife",
+    "watch": "esbuild src/main.ts --bundle --outfile=dist/game.js --target=es2019 --format=iife --watch",
+    "serve": "npx --yes http-server -p 8080 -c-1 .",
+    "test": "esbuild test/engine.selftest.ts --bundle --outfile=/tmp/win31tetris-t1.js --platform=node --target=es2019 && node /tmp/win31tetris-t1.js && esbuild test/board-tspin.selftest.ts --bundle --outfile=/tmp/win31tetris-t2.js --platform=node --target=es2019 && node /tmp/win31tetris-t2.js && esbuild test/music.selftest.ts --bundle --outfile=/tmp/win31tetris-t3.js --platform=node --target=es2019 && node /tmp/win31tetris-t3.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.23.0",
+    "typescript": "^5.5.4"
+  }
+}
